@@ -7,7 +7,7 @@ from numpy.random import shuffle
 def load_config():
     try:
         with open(join("config.yaml")) as yaml_file:
-            doc = yaml.load(yaml_file)
+            doc = yaml.safe_load(yaml_file)
         return doc
     except:
         raise Exception("Can't load config file")
